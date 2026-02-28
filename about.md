@@ -1,18 +1,15 @@
 ---
-layout: page
-title: About
+layout: default
+title: About Us
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+## Welcome to JanzTales!
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+Founded in 2026 by Mohammad Ayub Janz, JanzTales is a professional platform dedicated to providing you with the most engaging, informative, and high-quality content. We are passionate about sharing valuable knowledge, tips, and updates that add real value to your daily life.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+As a developer, creator, and passionate learner, Ayub Janz started this blog to build a strong community where people can find reliable and interesting information all in one place. We are working to turn our passion for knowledge-sharing into a booming online website.
 
+We hope you enjoy reading our articles as much as we enjoy offering them to you. We will keep posting more important and helpful posts on this website for all of you. Please give your support and love.
 
-[jekyll-organization]: https://github.com/jekyll
+Thanks For Visiting Our Site. Have a nice day!
