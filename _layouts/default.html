@@ -10,8 +10,8 @@
 
   <style>
     :root {
-      --primary-color: #111111; /* एकदम डार्क प्रोफेशनल कलर */
-      --accent-color: #E50914; /* नेटफ्लिक्स जैसा लाल अट्रैक्टिव कलर */
+      --primary-color: #111111; 
+      --accent-color: #E50914; 
       --bg-color: #f4f6f8;
       --text-color: #333333;
     }
@@ -24,7 +24,6 @@
       line-height: 1.7;
     }
     
-    /* टॉप हेडर (Top Header) */
     header {
       background-color: var(--primary-color);
       color: white;
@@ -60,7 +59,6 @@
     }
     .nav-links a:hover { color: var(--accent-color); }
 
-    /* एडसेंस का टॉप बैनर (AdSense Header Banner Slot) */
     .ad-slot-header {
       max-width: 728px;
       height: 90px;
@@ -75,7 +73,6 @@
       border-radius: 4px;
     }
 
-    /* मेन कंटेंट और साइडबार (Main Content Area) */
     main {
       max-width: 1100px;
       margin: 30px auto;
@@ -87,7 +84,7 @@
     }
     @media (max-width: 768px) {
       main { grid-template-columns: 1fr; }
-      .nav-links { display: none; } /* मोबाइल में लिंक छुप जाएंगे, बाद में मेनू बटन लगा देंगे */
+      .nav-links { display: none; } 
       .ad-slot-header { width: 100%; height: 50px; }
     }
     .content-area {
@@ -98,7 +95,6 @@
     }
     .content-area img { max-width: 100%; border-radius: 8px; }
 
-    /* साइडबार (Sidebar for Ads & Trending) */
     .sidebar {
       background: white;
       padding: 25px;
@@ -116,7 +112,6 @@
       text-transform: uppercase;
     }
 
-    /* फूटर (Footer) */
     footer {
       background-color: var(--primary-color);
       color: white;
@@ -142,7 +137,7 @@
     </div>
   </header>
 
-  <div class="ad-slot-header">
+  <div class="ad-slot-header" style="display: none;">
     [Google AdSense Top Banner - 728x90]
   </div>
 
@@ -155,7 +150,7 @@
       <h3 class="widget-title">Trending Now</h3>
       <p style="font-size: 14px; color: #666;">Janz Tales की सबसे बेहतरीन कहानियाँ और अपडेट्स।</p>
 
-      <div style="margin-top: 40px;">
+      <div style="margin-top: 40px; display: none;">
         <h3 class="widget-title">Advertisement</h3>
         <div style="width: 100%; height: 250px; background: #e0e0e0; display:flex; align-items:center; justify-content:center; color:#888; border: 1px dashed #aaa; border-radius: 4px;">
           [AdSense Sidebar - 300x250]
