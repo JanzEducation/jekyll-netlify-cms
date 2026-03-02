@@ -4,7 +4,7 @@ email: mdayubjanz@gmail.com
 description: >- 
   Janz Tales की बेहतरीन कहानियाँ, आर्टिकल्स और ताज़ा अपडेट्स।
 baseurl: "" 
-url: "" 
+url: "https://janztales.online" 
 
 # Build settings
 # (यहाँ से minima थीम को हमेशा के लिए जड़ से उड़ा दिया गया है)
