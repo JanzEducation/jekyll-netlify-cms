@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title | default: site.title }} - JANZ TALES</title>
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  
+  {% seo %}
 
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --primary-color: #111111; 
       --accent-color: #E50914; 
-      /* बैकग्राउंड को ग्रे से हटाकर एकदम शुद्ध वाइट कर दिया है */
       --bg-color: #ffffff;
       --text-color: #333333;
     }
@@ -81,7 +80,7 @@
       min-height: 60vh;
       display: grid;
       grid-template-columns: 7fr 3fr;
-      gap: 40px; /* गैप थोड़ा बढ़ा दिया है ताकि खुला-खुला लगे */
+      gap: 40px;
     }
     @media (max-width: 768px) {
       main { grid-template-columns: 1fr; gap: 20px; }
@@ -91,13 +90,11 @@
     }
     
     .content-area {
-      /* यहाँ से डब्बे, शैडो और एक्स्ट्रा वाइट बैकग्राउंड हटा दिया है */
       padding: 10px 0;
     }
     .content-area img { max-width: 100%; border-radius: 8px; margin-bottom: 20px; }
 
     .sidebar {
-      /* साइडबार को भी क्लीन करके बस एक लेफ्ट लाइन (बॉर्डर) दे दी है */
       padding: 10px 0 10px 30px;
       border-left: 1px solid #eaeaea;
       height: fit-content;
