@@ -20,5 +20,5 @@ jobs:
       - name: Ping Google Indexing API
         uses: robingenz/action-google-indexing@v1.0.0
         with:
-          siteUrl: 'https://janztales.online'
+          siteUrl: 'janztales.online'
           gcpServiceAccountKey: ${{ secrets.GOOGLE_API_KEY }}
