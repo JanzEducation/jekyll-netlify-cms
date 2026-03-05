@@ -1,0 +1,24 @@
+name: Auto Google Indexing API
+
+# यह मशीन तब चलेगी जब भी तू कोई नई पोस्ट डालेगा
+on:
+  push:
+    branches:
+      - main
+      - master
+  schedule:
+    # यह हर रात को भी एक बार पूरी साइट को चेक करके गूगल को पिंग करेगा
+    - cron: '0 0 * * *'
+
+jobs:
+  google-indexing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Ping Google Indexing API
+        uses: robingenz/action-google-indexing@v1.0.0
+        with:
+          siteUrl: 'https://janztales.online'
+          gcpServiceAccountKey: ${{ secrets.GOOGLE_API_KEY }}
