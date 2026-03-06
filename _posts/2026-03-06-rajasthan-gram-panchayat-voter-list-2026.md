@@ -6,7 +6,12 @@ keywords: "Rajasthan Gram Panchayat Chunav Voter list 2026, Rajasthan Panchayat 
 date: 2026-03-06 09:30:00 +0530
 categories: [Update, News]
 tags: [Rajasthan, Voter List, Election 2026]
+permalink: /rajasthan-gram-panchayat-voter-list-2026/
 ---
+
+<p style="text-align: left; font-size: 16px; font-weight: bold; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
+  ✍️ लेखक - <a href="https://instagram.com/md_ayub_janj" target="_blank" style="color: #E1306C; text-decoration: none;">MD AYUB JANZ</a>
+</p>
 
 राजस्थान में होने वाले ग्राम पंचायत चुनाव के लिए ताज़ा वोटर लिस्ट जारी कर दी गई है। राज्य में पंचायत राज चुनाव (ग्राम पंचायत समिति एवं जिला परिषद) के लिए नई मतदाता सूची पोर्टल पर अपलोड हो चुकी है। सभी अभ्यर्थी अब घर बैठे लिस्ट में अपना नाम चेक कर सकते हैं। 
 
