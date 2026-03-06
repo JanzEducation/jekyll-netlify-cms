@@ -6,7 +6,6 @@ keywords: "Rajasthan Gram Panchayat Chunav Voter list 2026, Rajasthan Panchayat 
 date: 2026-03-06 09:30:00 +0530
 categories: [Update, News]
 tags: [Rajasthan, Voter List, Election 2026]
-permalink: /rajasthan-gram-panchayat-voter-list-2026/
 ---
 
 <p style="text-align: left; font-size: 16px; font-weight: bold; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
