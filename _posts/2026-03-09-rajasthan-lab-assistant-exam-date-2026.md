@@ -3,7 +3,7 @@ layout: post
 title: "Rajasthan Lab Assistant Exam Date 2026 Out: 804 पदों पर परीक्षा 9 और 10 मई को, सिलेबस और एडमिट कार्ड यहाँ देखें"
 description: "Rajasthan Lab Assistant Exam Date 2026 घोषित कर दी गई है। RSMSSB द्वारा 804 पदों पर 9 और 10 मई 2026 को परीक्षा होगी। यहाँ से सिलेबस, एग्जाम पैटर्न और एडमिट कार्ड की पूरी ऑथेंटिक जानकारी प्राप्त करें।"
 keywords: "Rajasthan Lab Assistant Exam Date 2026, RSMSSB Lab Assistant Admit Card 2026, Lab Assistant syllabus PDF, Rajasthan Prayogshala Sahayak Bharti 2026, Lab Assistant 804 posts exam date"
-date: 2026-03-09 10:30:00 +0530
+date: 2026-03-09 00:10:00 +0530
 categories: [Education, Jobs]
 tags: [Rajasthan, Exam Date, Lab Assistant, RSMSSB]
 ---
