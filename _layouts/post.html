@@ -17,4 +17,20 @@ layout: default
     {{ content }}
   </div>
   
+  <div style="margin-top: 40px; border-top: 2px solid #dc3545; padding-top: 20px;">
+    <h3 style="color: #000; font-weight: bold; margin-bottom: 15px;">🔥 TRENDING NOW </h3>
+    <ul style="list-style-type: none; padding: 0;">
+      {% for post in site.posts limit:4 %}
+        {% if post.url != page.url %}
+        <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+          <a href="{{ site.url }}{{ post.url }}" style="text-decoration: none; color: #d93025; font-weight: bold; font-size: 16px; display: block; margin-bottom: 5px;">
+            ➤ {{ post.title }}
+          </a>
+          <span style="font-size: 13px; color: #666;">📅 {{ post.date | date: "%d %b %Y" }}</span>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  
 </article>
