@@ -1,13 +1,22 @@
 # Site settings
-title: JANZ TALES
-email: mdayubjanz@gmail.com
+title: "JANZ TALES"
+author: "MD AYUB JANZ"
+email: "mdayubjanz@gmail.com"
 description: >- 
-  Janz Tales की बेहतरीन कहानियाँ, आर्टिकल्स और ताज़ा अपडेट्स।
+  Janz Tales की बेहतरीन कहानियाँ, एजुकेशन न्यूज़, आर्टिकल्स और ताज़ा अपडेट्स।
 baseurl: "" 
 url: "https://janztales.online" 
 
-# Build settings
-# (यहाँ से minima थीम को हमेशा के लिए जड़ से उड़ा दिया गया है)
+# SEO & Timezone Settings (यह साइट को गूगल में रैंक करवाएगा)
+lang: "hi"
+timezone: "Asia/Kolkata"
 
 # Social links
-github_username: JanzEducation
+github_username: "JanzEducation"
+instagram_username: "md_ayub_janj"
+
+# Build settings & Plugins (Google Indexing और Sitemap के लिए बेहद ज़रूरी)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
