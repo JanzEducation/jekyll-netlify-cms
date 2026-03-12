@@ -6,6 +6,15 @@
   
   {% seo %}
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8E5FXS80S"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E8E5FXS80S');
+  </script>
+
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
 
@@ -83,7 +92,6 @@
       gap: 40px;
     }
     
-    /* यह कोड मोबाइल में साइडबार वाली ख़बरों को छुपा देगा */
     @media (max-width: 768px) {
       main { grid-template-columns: 1fr; gap: 20px; }
       .nav-links { display: none; } 
@@ -152,7 +160,8 @@
         <h3 class="widget-title">🔥 Trending Now</h3>
         <ul style="list-style-type: none; padding: 0; margin: 0;">
           {% for post in site.posts limit:5 %}
-            {% if post.url != page.url %} <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+            {% if post.url != page.url %}
+            <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
               <a href="{{ site.url }}{{ post.url }}" style="text-decoration: none; color: #111; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">
                 ➤ {{ post.title }}
               </a>
