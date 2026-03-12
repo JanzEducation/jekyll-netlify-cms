@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Eid Mubarak - Janz Tales</title>
+    <meta name="description" content="आपके लिए एक खास ईद का पैगाम! अभी खोल कर देखें।">
+    <meta property="og:title" content="🌙 ईद मुबारक का खास पैगाम!">
+    <meta property="og:description" content="जल्दी इस नीले लिंक पर क्लिक करके देखो आपके लिए क्या भेजा है!">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: #022c22; color: white; overflow-x: hidden; }
+        .hindi-text { font-family: 'Amita', serif; }
+        .moon-bg { 
+            background: radial-gradient(circle at top right, #064e3b, #022c22);
+            min-height: 100vh; position: relative;
+        }
+        .glow-text { text-shadow: 0 0 10px #fbbf24, 0 0 20px #fbbf24; }
+        .stars { position: absolute; width: 100%; height: 100%; background: url('https://www.transparenttextures.com/patterns/stardust.png'); opacity: 0.3; pointer-events: none; }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating { animation: float 3s ease-in-out infinite; }
+        
+        /* WhatsApp Button Pulse */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        .wa-btn { animation: pulse 2s infinite; background: #25D366; }
+    </style>
+</head>
+<body class="moon-bg">
+    <div class="stars"></div>
+
+    <div class="max-w-md mx-auto px-4 py-8 text-center relative z-10 flex flex-col justify-center min-h-screen">
+        
+        <div class="text-6xl mb-4 floating">🕌🌙✨</div>
+        
+        <div id="wishingArea" class="hidden">
+            <p class="text-xl text-yellow-300 font-semibold mb-2">अस्सलाम वालेकुम,</p>
+            <h1 id="showName" class="text-4xl md:text-5xl font-extrabold text-white mb-2 uppercase tracking-wide glow-text">
+                </h1>
+            <p class="text-lg text-emerald-200 mb-6 hindi-text">की तरफ से आपको और आपके पूरे परिवार को...</p>
+        </div>
+
+        <div class="bg-emerald-900/60 border-2 border-yellow-500/50 rounded-3xl p-6 mb-8 backdrop-blur-sm shadow-2xl">
+            <h2 class="text-5xl font-extrabold text-yellow-400 mb-4 hindi-text glow-text">ईद मुबारक</h2>
+            <p class="text-sm md:text-base text-gray-200 leading-relaxed hindi-text">
+                अल्लाह आपकी हर दुआ कबूल फरमाए,<br>
+                आपकी ज़िंदगी में खुशियों की बहार आए,<br>
+                इस ईद के मुकद्दस मौके पर,<br>
+                हमारी तरफ से आपको बहुत-बहुत मुबारकबाद! 🤲
+            </p>
+        </div>
+
+        <div id="inputArea" class="bg-white/10 p-6 rounded-2xl border border-white/20 backdrop-blur-md">
+            <p class="text-sm text-yellow-300 mb-3 font-semibold">👇 अपना नाम लिखकर दोस्तों को भेजें 👇</p>
+            <input type="text" id="nameInput" placeholder="यहाँ अपना नाम लिखें..." 
+                class="w-full text-center px-4 py-3 rounded-xl text-gray-900 font-bold text-lg focus:outline-none focus:ring-4 focus:ring-yellow-400 mb-4">
+            
+            <button onclick="createLink()" class="w-full bg-yellow-500 hover:bg-yellow-400 text-emerald-900 font-extrabold text-lg py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105">
+                🪄 जादू देखें (Share)
+            </button>
+        </div>
+
+        <div id="shareArea" class="hidden mt-4">
+            <button onclick="shareWhatsApp()" class="wa-btn w-full text-white font-bold text-xl py-4 rounded-xl flex items-center justify-center gap-2 shadow-xl mb-4">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.6.726 4.907 2.036 1.31 1.31 2.036 3.051 2.036 4.908-.001 3.826-3.114 6.936-6.943 6.936z"/></svg>
+                WhatsApp पर भेजें
+            </button>
+            <p class="text-xs text-gray-400">Powered by Janz Tales</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Check if there is a name in the URL (?n=Ayub)
+        const urlParams = new URLSearchParams(window.location.search);
+        const userName = urlParams.get('n');
+
+        if (userName) {
+            // Show the greeting with the name
+            document.getElementById('showName').innerText = userName;
+            document.getElementById('wishingArea').classList.remove('hidden');
+        }
+
+        // Create the custom link when button is clicked
+        function createLink() {
+            const nameInput = document.getElementById('nameInput').value.trim();
+            if (nameInput === "") {
+                alert("पहले अपना नाम तो लिखो भाई!");
+                return;
+            }
+            
+            // Generate the link with their name
+            const currentUrl = window.location.origin + window.location.pathname;
+            const shareUrl = currentUrl + "?n=" + encodeURIComponent(nameInput);
+            
+            // Hide input area, show share area
+            document.getElementById('inputArea').classList.add('hidden');
+            document.getElementById('shareArea').classList.remove('hidden');
+            
+            // Store the link for the share button
+            window.customShareUrl = shareUrl;
+            window.customShareName = nameInput;
+            
+            // Also update the page to show their name right away
+            document.getElementById('showName').innerText = nameInput;
+            document.getElementById('wishingArea').classList.remove('hidden');
+        }
+
+        // WhatsApp Share Function
+        function shareWhatsApp() {
+            const text = `*${window.customShareName}* ने आपके लिए एक खास सरप्राइज भेजा है! 🌙✨\n\nजल्दी इस ब्लू लिंक पर क्लिक करके देखो 👇\n\n${window.customShareUrl}`;
+            const whatsappUrl = `whatsapp://send?text=${encodeURIComponent(text)}`;
+            window.location.href = whatsappUrl;
+        }
+    </script>
+</body>
+</html>
