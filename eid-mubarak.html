@@ -7,60 +7,102 @@
     <meta name="description" content="आपके लिए एक जादुई तोहफा! अभी खोल कर देखें।">
     <meta property="og:title" content="🌙 ईद का खास तोहफा!">
     <meta property="og:description" content="जल्दी इस नीले लिंक पर क्लिक करके देखो अंदर क्या है!">
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;700;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif; background: #013322; color: #fff; overflow-x: hidden; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif; 
+            background: #012b1d; /* Deep Royal Islamic Green */
+            color: #ffffff; 
+            overflow-x: hidden; 
+            margin: 0; 
+            padding: 0; 
+        }
         
-        /* Soft Radial Gradient for Professional look */
-        .royal-bg { background: radial-gradient(circle at center, #014d33 0%, #013322 100%); min-height: 100vh; position: relative; }
+        /* Premium Background Gradient */
+        .royal-bg { 
+            background: radial-gradient(circle at top center, #024a33 0%, #012b1d 100%); 
+            min-height: 100vh; 
+            position: relative; 
+        }
         
-        /* Refined, Professional Glows */
-        .glow-gold { text-shadow: 0 0 8px #f0c36b, 0 0 16px #bfa100; }
-        .glow-white { text-shadow: 0 0 5px #ffffff, 0 0 10px #a7f3d0; }
+        /* Subtle Elegant Glows (No more blurry/harsh neon) */
+        .glow-gold { text-shadow: 0 0 10px rgba(228, 187, 94, 0.6); }
+        .glow-white { text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); }
         
-        /* Refined Borders (Classy, not cartoony) */
-        .glass-box { background: rgba(0, 0, 0, 0.2); backdrop-blur: 10px; border: 1px solid rgba(240, 195, 107, 0.3); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .wa-box { background: #25D366; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5); }
+        /* Premium Glassmorphism Boxes */
+        .glass-box { 
+            background: rgba(0, 0, 0, 0.25); 
+            backdrop-blur: 12px; 
+            border: 1px solid rgba(228, 187, 94, 0.2); 
+            border-radius: 24px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4); 
+        }
+        
+        /* WhatsApp Button Pulse */
+        @keyframes pulse-btn { 
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); } 
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } 
+        }
+        .wa-btn { background: #25D366; animation: pulse-btn 2s infinite; }
 
-        /* Subtle, Classy Floating */
-        @keyframes subtle-float { 0% { transform: translateY(0px); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0px); } }
-        .floating { animation: subtle-float 3s ease-in-out infinite; }
+        /* Smooth Animations */
+        @keyframes gentle-float { 
+            0% { transform: translateY(0px); } 
+            50% { transform: translateY(-8px); } 
+            100% { transform: translateY(0px); } 
+        }
+        .floating { animation: gentle-float 4s ease-in-out infinite; }
         
-        @keyframes pulse-btn { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-        .wa-btn-animate { animation: pulse-btn 2s infinite; }
+        @keyframes swing { 
+            0% { transform: rotate(4deg); } 
+            50% { transform: rotate(-4deg); } 
+            100% { transform: rotate(4deg); } 
+        }
+        .swinging { animation: swing 5s ease-in-out infinite; transform-origin: top center; }
 
-        /* Suspsense Magic Door */
-        #magicDoor { position: fixed; inset: 0; background: #013322; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: opacity 0.8s ease-out; }
+        /* Magic Door Overlay */
+        #magicDoor { 
+            position: fixed; inset: 0; background: #012b1d; z-index: 999; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            cursor: pointer; transition: opacity 0.8s ease-out; 
+        }
     </style>
 </head>
 <body class="royal-bg">
 
-    <audio id="eidMusic" src="https://assets.mixkit.co/active_storage/sfx/123/123-preview.mp3" loop></audio>
+    <audio id="eidMusic" src="eid.mp3" loop></audio>
 
     <div id="magicDoor" onclick="openMagic()">
         <div class="text-7xl mb-6 floating drop-shadow-2xl">🌙</div>
-        <h2 class="text-2xl font-bold text-[#f0c36b] glow-gold text-center px-6 leading-tight Noto Sans Devanagari">इस चाँद को टच करके<br>अपना तोहफा खोलें! 👇</h2>
-        <p class="mt-8 text-sm text-emerald-300 animate-pulse Poppins">Tap Anywhere</p>
+        <h2 class="text-2xl font-bold text-[#e4bb5e] glow-gold text-center px-6 leading-relaxed">
+            इस चाँद को टच करके<br>अपना तोहफा खोलें! 👇
+        </h2>
+        <div class="mt-8 px-6 py-2 bg-white/10 rounded-full border border-white/20 animate-pulse text-sm text-[#e4bb5e]">
+            Touch Anywhere
+        </div>
     </div>
 
     <div id="mainContent" class="hidden relative z-10 min-h-screen flex flex-col items-center justify-start pt-6 px-4 pb-12">
         
-        <div class="w-full flex justify-between px-6 text-3xl mb-4 drop-shadow-md">
+        <div class="w-full max-w-sm flex justify-between px-4 text-4xl mb-2 drop-shadow-xl">
             <div class="swinging">🏮</div>
-            <div class="swinging" style="animation-delay: 1s;">🏮</div>
+            <div class="swinging" style="animation-delay: 1.5s;">🏮</div>
         </div>
 
         <div class="text-center w-full mb-6">
-            <h1 id="showName" class="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-wider glow-white mb-2 Poppins">
+            <h1 id="showName" class="text-4xl md:text-5xl font-extrabold text-white uppercase tracking-wider glow-white mb-2 leading-tight">
                 </h1>
-            <p class="text-xl text-[#f0c36b] font-bold Noto Sans Devanagari">की तरफ से आपको...</p>
+            <p class="text-lg text-[#e4bb5e] font-semibold">की तरफ से आपको...</p>
         </div>
 
-        <div class="glass-box p-6 md:p-8 mb-8 text-center max-w-sm w-full transform hover:scale-105 transition-all">
-            <h2 class="text-5xl font-extrabold text-[#f0c36b] mb-4 glow-gold Noto Sans Devanagari">ईद मुबारक</h2>
-            <p class="text-base text-gray-100 leading-relaxed font-normal Noto Sans Devanagari">
+        <div class="glass-box p-7 mb-8 text-center max-w-sm w-full">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-[#e4bb5e] mb-5 glow-gold">ईद मुबारक</h2>
+            <p class="text-[15px] md:text-base text-gray-200 leading-loose font-medium">
                 चुपके से चाँद की रौशनी छू जाए आपको,<br>
                 धीरे से ये हवा कुछ कह जाए आपको,<br>
                 दिल से जो चाहते हो मांग लो खुदा से,<br>
@@ -68,60 +110,81 @@
             </p>
         </div>
 
-        <div class="w-full max-w-sm glass-box p-4 mb-8 text-center">
-            <h3 class="text-lg text-emerald-300 font-bold mb-3 Noto Sans Devanagari">ईद-उल-फितर में बाकी हैं:</h3>
-            <div class="flex justify-center gap-3 Poppins">
-                <div class="bg-[#022c22]/70 rounded-lg p-2 w-16 shadow-inner"><span id="days" class="text-2xl font-bold text-[#f0c36b]">00</span><p class="text-[10px] text-gray-300 font-medium">दिन</p></div>
-                <div class="bg-[#022c22]/70 rounded-lg p-2 w-16 shadow-inner"><span id="hours" class="text-2xl font-bold text-[#f0c36b]">00</span><p class="text-[10px] text-gray-300 font-medium">घंटे</p></div>
-                <div class="bg-[#022c22]/70 rounded-lg p-2 w-16 shadow-inner"><span id="mins" class="text-2xl font-bold text-[#f0c36b]">00</span><p class="text-[10px] text-gray-300 font-medium">मिनट</p></div>
-                <div class="bg-[#022c22]/70 rounded-lg p-2 w-16 shadow-inner"><span id="secs" class="text-2xl font-bold text-[#f0c36b]">00</span><p class="text-[10px] text-gray-300 font-medium">सेकंड</p></div>
+        <div class="w-full max-w-sm glass-box p-5 mb-8 text-center">
+            <h3 class="text-base text-emerald-200 font-bold mb-4">ईद-उल-फितर में बाकी हैं:</h3>
+            <div class="flex justify-center gap-4">
+                <div class="flex flex-col items-center">
+                    <div class="bg-black/40 border border-[#e4bb5e]/30 rounded-xl w-14 h-14 flex items-center justify-center shadow-inner mb-1">
+                        <span id="days" class="text-2xl font-bold text-[#e4bb5e]">00</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium tracking-wide">दिन</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-black/40 border border-[#e4bb5e]/30 rounded-xl w-14 h-14 flex items-center justify-center shadow-inner mb-1">
+                        <span id="hours" class="text-2xl font-bold text-[#e4bb5e]">00</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium tracking-wide">घंटे</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-black/40 border border-[#e4bb5e]/30 rounded-xl w-14 h-14 flex items-center justify-center shadow-inner mb-1">
+                        <span id="mins" class="text-2xl font-bold text-[#e4bb5e]">00</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium tracking-wide">मिनट</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-black/40 border border-[#e4bb5e]/30 rounded-xl w-14 h-14 flex items-center justify-center shadow-inner mb-1">
+                        <span id="secs" class="text-2xl font-bold text-[#e4bb5e]">00</span>
+                    </div>
+                    <span class="text-[11px] text-gray-400 font-medium tracking-wide">सेकंड</span>
+                </div>
             </div>
         </div>
 
-        <div id="inputArea" class="w-full max-w-sm glass-box p-5 rounded-2xl text-center">
-            <p class="text-sm text-gray-200 mb-3 font-medium Noto Sans Devanagari">👇 अपना नाम लिखकर दोस्तों को सरप्राइज दें 👇</p>
+        <div id="inputArea" class="w-full max-w-sm glass-box p-6 text-center">
+            <p class="text-sm text-gray-300 mb-4 font-semibold">👇 अपना नाम लिखकर दोस्तों को सरप्राइज दें 👇</p>
             <input type="text" id="nameInput" placeholder="यहाँ अपना नाम लिखें..." 
-                class="w-full text-center px-4 py-3 rounded-xl bg-gray-100 text-[#013322] font-bold text-lg focus:outline-none focus:ring-4 focus:ring-[#f0c36b] mb-4 shadow-inner Poppins">
+                class="w-full text-center px-4 py-3.5 rounded-xl bg-white text-[#012b1d] font-bold text-lg focus:outline-none focus:ring-4 focus:ring-[#e4bb5e] mb-5 shadow-inner">
             
-            <button onclick="createLink()" class="w-full bg-gradient-to-r from-[#f0c36b] to-[#bfa100] hover:from-[#f0c36b] hover:to-[#f0c36b] text-[#013322] font-extrabold text-base md:text-lg py-3 rounded-xl shadow-lg transition-transform transform hover:scale-105 Noto Sans Devanagari">
+            <button onclick="createLink()" class="w-full bg-gradient-to-r from-[#e4bb5e] to-[#c79a38] text-[#012b1d] font-extrabold text-lg py-3.5 rounded-xl shadow-lg transform active:scale-95 transition-all">
                 🪄 शेयर करने का लिंक बनाएं
             </button>
         </div>
 
-        <div id="shareArea" class="hidden w-full max-w-sm mt-4">
-            <button onclick="shareWhatsApp()" class="wa-box wa-btn-animate w-full text-white font-bold text-xl py-4 rounded-xl flex items-center justify-center gap-3 shadow-2xl mb-4 Poppins">
+        <div id="shareArea" class="hidden w-full max-w-sm mt-2">
+            <button onclick="shareWhatsApp()" class="wa-btn w-full text-white font-bold text-xl py-4 rounded-xl flex items-center justify-center gap-3 shadow-2xl mb-3">
                 <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.6.726 4.907 2.036 1.31 1.31 2.036 3.051 2.036 4.908-.001 3.826-3.114 6.936-6.943 6.936z"/></svg>
                 WhatsApp पर भेजें
             </button>
-            <p class="text-xs text-emerald-400 font-semibold text-center mt-2 Noto Sans Devanagari">✨ जल्दी भेजें, ईद आने वाली है! ✨</p>
+            <p class="text-xs text-[#e4bb5e] font-semibold tracking-wide">✨ जल्दी भेजें, ईद आने वाली है! ✨</p>
         </div>
 
     </div>
 
     <script>
-        // 1. Suspsense & Audio Control
+        // 1. Reveal Content & Play User's Audio
         function openMagic() {
-            document.getElementById('magicDoor').style.opacity = '0';
+            const door = document.getElementById('magicDoor');
+            door.style.opacity = '0';
             setTimeout(() => {
-                document.getElementById('magicDoor').style.display = 'none';
+                door.style.display = 'none';
                 document.getElementById('mainContent').classList.remove('hidden');
             }, 600);
             
-            // Play Music
-            document.getElementById('eidMusic').play().catch(e => console.log("Auto-play blocked, playing on interaction"));
+            // Play your eid.mp3
+            document.getElementById('eidMusic').play().catch(e => console.log("Audio needs user interaction"));
         }
 
-        // 2. Name from URL with Default
+        // 2. Fetch Name from URL
         const urlParams = new URLSearchParams(window.location.search);
         let userName = urlParams.get('n');
         
         if (userName) {
             document.getElementById('showName').innerText = userName;
         } else {
-            document.getElementById('showName').innerText = "आपके एक दोस्त"; // Default
+            document.getElementById('showName').innerText = "आपके एक दोस्त"; 
         }
 
-        // 3. Countdown Timer (Professional implementation, target March 21, 2026, 00:00:00)
+        // 3. Countdown Logic (March 21, 2026)
         const targetDate = new Date("Mar 21, 2026 00:00:00").getTime();
         
         function updateTimer() {
@@ -129,7 +192,10 @@
             const distance = targetDate - now;
 
             if (distance < 0) {
-                document.querySelectorAll(".glass-box span").forEach(el => el.innerText = "00");
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("mins").innerText = "00";
+                document.getElementById("secs").innerText = "00";
                 return;
             }
 
@@ -144,11 +210,10 @@
             document.getElementById("secs").innerText = seconds < 10 ? "0" + seconds : seconds;
         }
         
-        // Initial run & set interval
         updateTimer();
         setInterval(updateTimer, 1000);
 
-        // 4. Link Creation
+        // 4. Create Viral Link
         function createLink() {
             const nameInput = document.getElementById('nameInput').value.trim();
             if (nameInput === "") {
@@ -167,23 +232,12 @@
             document.getElementById('showName').innerText = nameInput;
         }
 
-        // 5. WhatsApp Share Clickbait
+        // 5. Share via WhatsApp
         function shareWhatsApp() {
             const text = `*${window.customShareName}* ने आपके लिए एक जादुई तोहफा भेजा है! 🌙✨\n\nजल्दी इस नीले लिंक को टच करके देखो अंदर क्या है 👇\n\n${window.customShareUrl}`;
             const whatsappUrl = `whatsapp://send?text=${encodeURIComponent(text)}`;
             window.location.href = whatsappUrl;
         }
-        Tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    'eid-green': '#014d33',
-                    'eid-forest': '#013322',
-                    'eid-gold': '#f0c36b',
-                },
-            },
-        },
-    }
     </script>
 </body>
 </html>
