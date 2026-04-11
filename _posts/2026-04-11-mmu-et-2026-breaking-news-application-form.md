@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Breaking News: MMU ET 2026 - राजस्थान में पहली बार आयोजित होगा B.Sc Nursing का नया एंट्रेंस एग्जाम, 20 अप्रैल से फॉर्म शुरू"
+title: MMU ET 2026 - राजस्थान में पहली बार आयोजित होगा B.Sc Nursing का नया एंट्रेंस एग्जाम, 20 अप्रैल से फॉर्म शुरू"
 description: "मारवाड़ मेडिकल यूनिवर्सिटी (MMU) जोधपुर पहली बार B.Sc Nursing एडमिशन के लिए MMU ET 2026 आयोजित कर रही है। जानें फॉर्म डेट, योग्यता और परीक्षा से जुड़ी सबसे ताज़ा और सटीक ब्रेकिंग न्यूज़।"
 keywords: "MMU ET 2026 breaking news, Marwar Medical University admission 2026, Rajasthan BSc nursing admission, MMU ET application form date, RUHS vs MMU news, Janz Tales education news"
 date: 2026-04-11 10:00:00 +0530
@@ -10,8 +10,8 @@ tags: [MMU ET 2026, Latest News, BSc Nursing, Rajasthan Education]
 
 राजस्थान के चिकित्सा शिक्षा (Medical Education) जगत से आज की सबसे बड़ी और ऐतिहासिक खबर सामने आ रही है। जयपुर स्थित RUHS के एकाधिकार को कम करते हुए, जोधपुर की नई **मारवाड़ मेडिकल यूनिवर्सिटी (MMU)** ने अपना खुद का प्रवेश परीक्षा तंत्र स्थापित कर लिया है। 
 
-<p style="text-align: right; font-size: 15px; font-weight: bold; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
-  ✍️ रिपोर्टर - <a href="https://instagram.com/md_ayub_janj" target="_blank" style="color: #E1306C; text-decoration: none;">MD AYUB JANZ</a>
+<p style="text-align: right; font-size: 15px; font-weight: bold; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px; color: #1e3a8a;">
+  ✍️ लेखक - MD AYUB JANZ
 </p>
 
 <div style="background-color: #ffeeba; border-left: 5px solid #ffc107; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
