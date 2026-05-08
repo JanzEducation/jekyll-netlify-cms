@@ -4,6 +4,7 @@
     width="100%" 
     height="900"
     style="border:none;border-radius:12px;background:#fff;"
-    allowfullscreen>
+    allow="fullscreen"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals">
   </iframe>
 </div>
