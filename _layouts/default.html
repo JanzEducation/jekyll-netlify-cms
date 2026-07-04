@@ -1,196 +1,547 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  {% seo %}
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8E5FXS80S"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-E8E5FXS80S');
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+{% seo %}
 
-  <style>
-    :root {
-      --primary-color: #111111; 
-      --accent-color: #E50914; 
-      --bg-color: #ffffff;
-      --text-color: #333333;
-    }
-    body {
-      font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.7;
-    }
-    
-    header {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 15px 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .nav-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 26px;
-      font-weight: 700;
-      color: white;
-      text-decoration: none;
-      letter-spacing: 1.5px;
-    }
-    .logo span { color: var(--accent-color); }
-    .nav-links a {
-      color: #e0e0e0;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      transition: color 0.3s;
-    }
-    .nav-links a:hover { color: var(--accent-color); }
+<title>
+{% if page.title %}
+{{ page.title }} | {{ site.title }}
+{% else %}
+{{ site.title }}
+{% endif %}
+</title>
 
-    .ad-slot-header {
-      max-width: 728px;
-      height: 90px;
-      background-color: #e0e0e0;
-      margin: 25px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      font-size: 14px;
-      border: 1px dashed #aaa;
-      border-radius: 4px;
-    }
-    main {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 0 20px;
-      min-height: 60vh;
-      display: grid;
-      grid-template-columns: 7fr 3fr;
-      gap: 40px;
-    }
-    
-    @media (max-width: 768px) {
-      main { grid-template-columns: 1fr; gap: 20px; }
-      .nav-links { display: none; } 
-      .ad-slot-header { width: 100%; height: 50px; }
-      .sidebar { border-left: none !important; border-top: 1px solid #eee; padding-top: 20px; }
-      .hide-on-mobile { display: none !important; } 
-    }
-    
-    .content-area {
-      padding: 10px 0;
-    }
-    .content-area img { max-width: 100%; border-radius: 8px; margin-bottom: 20px; }
+<meta name="theme-color" content="#e50914">
 
-    .sidebar {
-      padding: 10px 0 10px 30px;
-      border-left: 1px solid #eaeaea;
-      height: fit-content;
-    }
-    .widget-title {
-      font-size: 18px;
-      font-weight: 700;
-      border-bottom: 3px solid var(--accent-color);
-      padding-bottom: 8px;
-      margin-top: 0;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    footer {
-      background-color: var(--primary-color);
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 50px;
-    }
-    footer a { color: #aaa; text-decoration: none; margin: 0 12px; font-size: 14px; }
-    footer a:hover { color: white; }
-  </style>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+<script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E8E5FXS80S"></script>
+
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-E8E5FXS80S');
+</script>
+
 </head>
+
 <body>
 
-  <header>
-    <div class="nav-container">
-      <a href="/" class="logo">JANZ<span> TALES</span></a>
-      <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/about/">About Us</a>
-        <a href="/privacy-policy/">Privacy Policy</a>
-        <a href="/contact/">Contact</a>
-      </div>
-    </div>
-  </header>
+<div id="loader">
 
-  <div class="ad-slot-header" style="display: none;">
-    [Google AdSense Top Banner - 728x90]
-  </div>
+<div class="loader-circle"></div>
 
-  <main>
-    <div class="content-area">
-      {{ content }}
-    </div>
+<span>Loading JANZ TALES...</span>
 
-    <aside class="sidebar">
-      
-      <div class="hide-on-mobile">
-        <h3 class="widget-title">🔥 Trending Now</h3>
-        <ul style="list-style-type: none; padding: 0; margin: 0;">
-          {% for post in site.posts limit:5 %}
-            {% if post.url != page.url %}
-            <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
-              <a href="{{ site.url }}{{ post.url }}" style="text-decoration: none; color: #111; font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px;">
-                ➤ {{ post.title }}
-              </a>
-              <span style="font-size: 12px; color: #888;">📅 {{ post.date | date: "%d %b %Y" }}</span>
-            </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
+</div>
 
-      <div style="margin-top: 40px; display: none;">
-        <h3 class="widget-title">Advertisement</h3>
-        <div style="width: 100%; height: 250px; background: #e0e0e0; display:flex; align-items:center; justify-content:center; color:#888; border: 1px dashed #aaa; border-radius: 4px;">
-          [AdSense Sidebar - 300x250]
-        </div>
-      </div>
+<header class="header">
 
-    </aside>
-  </main>
+<div class="topbar">
 
-  <footer>
-    <p>&copy; 2026 JANZ TALES. All Rights Reserved.</p>
-    <div style="margin-top: 15px;">
-      <a href="/about/">About Us</a>
-      <a href="/privacy-policy/">Privacy Policy</a>
-      <a href="/terms/">Terms & Conditions</a>
-      <a href="/contact/">Contact Us</a>
-    </div>
-  </footer>
+<div class="container">
+
+<div class="left">
+
+🔥 Breaking News
+
+</div>
+
+<div class="center">
+
+<marquee scrollamount="5">
+
+{% for post in site.posts limit:8 %}
+
+<a href="{{ post.url | relative_url }}">
+
+{{ post.title }}
+
+</a>
+
+•
+
+{% endfor %}
+
+</marquee>
+
+</div>
+
+<div class="right">
+
+{{ site.time | date:"%d %B %Y" }}
+
+</div>
+
+</div>
+
+</div>
+
+<nav class="navbar">
+
+<div class="container">
+
+<a class="logo" href="/">
+
+<span class="red">JANZ</span>
+
+<span class="white">TALES</span>
+
+</a>
+
+<button id="menuBtn">
+
+☰
+
+</button>
+
+<ul id="menu">
+
+<li><a href="/">Home</a></li>
+
+<li><a href="/categories/">Categories</a></li>
+
+<li><a href="/technology/">Technology</a></li>
+
+<li><a href="/education/">Education</a></li>
+
+<li><a href="/news/">News</a></li>
+
+<li><a href="/about/">About</a></li>
+
+<li><a href="/contact/">Contact</a></li>
+
+</ul>
+
+<div class="nav-right">
+
+<form class="search-box" action="/search/">
+
+<input
+type="search"
+name="q"
+placeholder="Search stories...">
+
+<button>
+
+🔍
+
+</button>
+
+</form>
+
+<button id="darkToggle">
+
+🌙
+
+</button>
+
+</div>
+
+</div>
+
+</nav>
+
+</header>
+
+<main class="main-wrapper">
+
+<div class="content">
+
+{{ content }}
+
+</div>
+<div class="sidebar">
+
+<div class="widget">
+
+<h3 class="widget-title">
+🔥 Trending Now
+</h3>
+
+<ul class="trending-list">
+
+{% for post in site.posts limit:6 %}
+
+{% unless post.url == page.url %}
+
+<li>
+
+<a href="{{ post.url | relative_url }}">
+
+{% if post.image %}
+
+<img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+
+{% endif %}
+
+<div>
+
+<span class="trend-number">
+{{ forloop.index }}
+</span>
+
+<h4>
+{{ post.title }}
+</h4>
+
+<p>
+
+{{ post.date | date:"%d %b %Y" }}
+
+</p>
+
+</div>
+
+</a>
+
+</li>
+
+{% endunless %}
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+<div class="widget">
+
+<h3 class="widget-title">
+
+📰 Latest Updates
+
+</h3>
+
+{% for post in site.posts limit:5 %}
+
+<div class="latest-post">
+
+<a href="{{ post.url | relative_url }}">
+
+{{ post.title }}
+
+</a>
+
+<span>
+
+{{ post.date | date:"%d %B %Y" }}
+
+</span>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+<div class="widget">
+
+<h3 class="widget-title">
+
+📂 Categories
+
+</h3>
+
+<ul class="category-list">
+
+<li><a href="/technology/">Technology</a></li>
+
+<li><a href="/education/">Education</a></li>
+
+<li><a href="/news/">News</a></li>
+
+<li><a href="/business/">Business</a></li>
+
+<li><a href="/science/">Science</a></li>
+
+<li><a href="/ai/">Artificial Intelligence</a></li>
+
+<li><a href="/tips/">Tips & Tricks</a></li>
+
+</ul>
+
+</div>
+
+<div class="widget subscribe-box">
+
+<h3>
+
+📧 Newsletter
+
+</h3>
+
+<p>
+
+Get latest stories directly in your inbox.
+
+</p>
+
+<form>
+
+<input
+type="email"
+placeholder="Email Address">
+
+<button>
+
+Subscribe
+
+</button>
+
+</form>
+
+</div>
+
+<div class="widget">
+
+<h3 class="widget-title">
+
+🌐 Follow Us
+
+</h3>
+
+<div class="social-grid">
+
+<a href="#">
+Facebook
+</a>
+
+<a href="#">
+Instagram
+</a>
+
+<a href="#">
+YouTube
+</a>
+
+<a href="#">
+Telegram
+</a>
+
+<a href="#">
+WhatsApp
+</a>
+
+<a href="#">
+X
+</a>
+
+</div>
+
+</div>
+
+<div class="widget ad-widget">
+
+<div class="ad-box">
+
+Advertisement
+
+300 × 250
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+<footer class="footer">
+
+<div class="container footer-grid">
+
+<div class="footer-col">
+
+<h3>JANZ TALES</h3>
+
+<p>
+Trusted source for News, Technology,
+Education and Interesting Stories.
+</p>
+
+</div>
+
+<div class="footer-col">
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="/about/">About</a></li>
+
+<li><a href="/contact/">Contact</a></li>
+
+<li><a href="/privacy-policy/">Privacy Policy</a></li>
+
+<li><a href="/terms/">Terms & Conditions</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-col">
+
+<h3>Categories</h3>
+
+<ul>
+
+<li><a href="/technology/">Technology</a></li>
+
+<li><a href="/education/">Education</a></li>
+
+<li><a href="/news/">News</a></li>
+
+<li><a href="/science/">Science</a></li>
+
+<li><a href="/business/">Business</a></li>
+
+</ul>
+
+</div>
+
+<div class="footer-col">
+
+<h3>Follow</h3>
+
+<div class="footer-social">
+
+<a href="#">Facebook</a>
+
+<a href="#">Instagram</a>
+
+<a href="#">YouTube</a>
+
+<a href="#">Telegram</a>
+
+<a href="#">X</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© {{ site.time | date:"%Y" }} JANZ TALES.
+All Rights Reserved.
+
+</div>
+
+</footer>
+
+<button id="backTop">
+
+⬆
+
+</button>
+
+<script>
+
+const topBtn=document.getElementById("backTop");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>300){
+
+topBtn.classList.add("show");
+
+}else{
+
+topBtn.classList.remove("show");
+
+}
+
+});
+
+topBtn.onclick=()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+};
+
+const menuBtn=document.getElementById("menuBtn");
+
+const menu=document.getElementById("menu");
+
+if(menuBtn){
+
+menuBtn.onclick=()=>{
+
+menu.classList.toggle("active");
+
+};
+
+}
+
+const dark=document.getElementById("darkToggle");
+
+if(dark){
+
+dark.onclick=()=>{
+
+document.body.classList.toggle("dark");
+
+localStorage.setItem(
+
+"theme",
+
+document.body.classList.contains("dark")?
+
+"dark":"light"
+
+);
+
+};
+
+}
+
+if(localStorage.getItem("theme")=="dark"){
+
+document.body.classList.add("dark");
+
+}
+
+window.onload=()=>{
+
+const loader=document.getElementById("loader");
+
+if(loader){
+
+loader.style.opacity="0";
+
+setTimeout(()=>{
+
+loader.style.display="none";
+
+},500);
+
+}
+
+};
+
+</script>
 
 </body>
+
 </html>
