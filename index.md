@@ -3,151 +3,149 @@ layout: default
 title: Home
 ---
 
-<style>
-.page-title{
-font-size:34px;
-font-weight:800;
-margin:30px 0;
-background:linear-gradient(90deg,#ff2d55,#ff0000);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
+<!-- ================= HERO ================= -->
 
-.post-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-gap:28px;
-}
+<section class="hero">
 
-.post-card{
-background:#fff;
-border-radius:18px;
-overflow:hidden;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-transition:.4s;
-animation:fadeUp .8s ease both;
-}
+<div class="hero-left">
 
-.post-card:hover{
-transform:translateY(-10px);
-box-shadow:0 25px 60px rgba(229,9,20,.18);
-}
+<span class="breaking">🔥 BREAKING</span>
 
-.post-image{
-height:240px;
-overflow:hidden;
-}
+<h1>Stories That Matter.<br>Truth That Lasts.</h1>
 
-.post-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:.5s;
-}
+<p>
+Welcome to <strong>JANZ TALES</strong>, your trusted source
+for news, explainers, technology, education and inspiring stories.
+</p>
 
-.post-card:hover img{
-transform:scale(1.08);
-}
-
-.post-content{
-padding:22px;
-}
-
-.post-title{
-font-size:24px;
-font-weight:800;
-line-height:1.4;
-margin-bottom:12px;
-}
-
-.post-title a{
-color:#111;
-text-decoration:none;
-}
-
-.post-title a:hover{
-color:#E50914;
-}
-
-.post-date{
-font-size:13px;
-color:#999;
-margin-bottom:14px;
-}
-
-.post-excerpt{
-font-size:16px;
-color:#555;
-line-height:1.8;
-margin-bottom:20px;
-}
-
-.read-btn{
-display:inline-flex;
-align-items:center;
-gap:10px;
-padding:12px 22px;
-background:linear-gradient(90deg,#ff1f3d,#E50914);
-color:#fff;
-border-radius:40px;
-text-decoration:none;
-font-weight:700;
-transition:.35s;
-box-shadow:0 10px 25px rgba(229,9,20,.35);
-}
-
-.read-btn:hover{
-transform:translateX(6px);
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-</style>
-
-<h1 class="page-title">
-🔥 Latest Tales
-</h1>
-
-<div class="post-grid">
-
-{% for post in site.posts %}
-
-<div class="post-card">
-
-{% if post.image %}
-<div class="post-image">
-<a href="{{ post.url | relative_url }}">
-<img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+<a href="#latest" class="hero-btn">
+Explore Stories →
 </a>
+
 </div>
+
+<div class="hero-right">
+
+{% assign featured = site.posts.first %}
+
+{% if featured.image %}
+
+<a href="{{ featured.url | relative_url }}">
+
+<img src="{{ featured.image | relative_url }}" alt="{{ featured.title }}">
+
+</a>
+
 {% endif %}
 
-<div class="post-content">
+<div class="featured-card">
 
-<div class="post-title">
-<a href="{{ post.url | relative_url }}">
-{{ post.title }}
+<span class="badge">FEATURED</span>
+
+<h2>
+
+<a href="{{ featured.url | relative_url }}">
+
+{{ featured.title }}
+
 </a>
+
+</h2>
+
+<p>
+
+{{ featured.excerpt | strip_html | truncatewords:25 }}
+
+</p>
+
 </div>
 
-<div class="post-date">
-📅 {{ post.date | date: "%d %B, %Y" }}
 </div>
 
-<div class="post-excerpt">
-{{ post.excerpt | strip_html | truncatewords: 24 }}
+</section>
+
+<!-- ================= BREAKING NEWS ================= -->
+
+<section class="ticker">
+
+<div class="ticker-title">
+
+LIVE
+
 </div>
 
-<a class="read-btn" href="{{ post.url | relative_url }}">
+<div class="ticker-content">
+
+<marquee scrollamount="5">
+
+{% for post in site.posts limit:10 %}
+
+📰
+
+<a href="{{ post.url | relative_url }}">
+
+{{ post.title }}
+
+</a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+{% endfor %}
+
+</marquee>
+
+</div>
+
+</section>
+
+<!-- ================= EDITOR PICKS ================= -->
+
+<section class="editor-section">
+
+<h2 class="section-title">
+
+⭐ Editor's Picks
+
+</h2>
+
+<div class="editor-grid">
+
+{% for post in site.posts limit:3 %}
+
+<div class="editor-card">
+
+{% if post.image %}
+
+<a href="{{ post.url | relative_url }}">
+
+<img src="{{ post.image | relative_url }}">
+
+</a>
+
+{% endif %}
+
+<div class="editor-content">
+
+<h3>
+
+<a href="{{ post.url | relative_url }}">
+
+{{ post.title }}
+
+</a>
+
+</h3>
+
+<p>
+
+{{ post.excerpt | strip_html | truncatewords:18 }}
+
+</p>
+
+<a href="{{ post.url | relative_url }}" class="read-btn">
+
 Read More →
+
 </a>
 
 </div>
@@ -157,3 +155,71 @@ Read More →
 {% endfor %}
 
 </div>
+
+</section>
+
+<!-- ================= LATEST ================= -->
+
+<section id="latest">
+
+<h2 class="section-title">
+
+📰 Latest Tales
+
+</h2>
+
+<div class="post-grid">
+
+{% for post in site.posts offset:3 %}
+
+<div class="post-card">
+
+{% if post.image %}
+
+<a href="{{ post.url | relative_url }}">
+
+<img src="{{ post.image | relative_url }}">
+
+</a>
+
+{% endif %}
+
+<div class="post-content">
+
+<span class="date">
+
+📅 {{ post.date | date:"%d %b %Y" }}
+
+</span>
+
+<h3>
+
+<a href="{{ post.url | relative_url }}">
+
+{{ post.title }}
+
+</a>
+
+</h3>
+
+<p>
+
+{{ post.excerpt | strip_html | truncatewords:22 }}
+
+</p>
+
+<a href="{{ post.url | relative_url }}" class="read-btn">
+
+Continue Reading →
+
+</a>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</section>
