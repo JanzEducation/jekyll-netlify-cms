@@ -3,223 +3,81 @@ layout: default
 title: Home
 ---
 
-<!-- ================= HERO ================= -->
+<div class="home-container">
+  <header class="home-header">
+    <h1 class="page-heading">Latest Updates from Janz Education</h1>
+    <p>Welcome to our learning platform.</p>
+  </header>
 
-<section class="hero">
-
-<div class="hero-left">
-
-<span class="breaking">🔥 BREAKING</span>
-
-<h1>Stories That Matter.<br>Truth That Lasts.</h1>
-
-<p>
-Welcome to <strong>JANZ TALES</strong>, your trusted source
-for news, explainers, technology, education and inspiring stories.
-</p>
-
-<a href="#latest" class="hero-btn">
-Explore Stories →
-</a>
-
+  <!-- Jekyll Loop to Fetch Posts -->
+  {% if site.posts.size > 0 %}
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li class="post-item">
+          <!-- Post Date -->
+          <span class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</span>
+          
+          <!-- Post Title and Link -->
+          <h2 class="post-title">
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h2>
+          
+          <!-- Post Excerpt (Summary) -->
+          <div class="post-excerpt">
+            {{ post.excerpt }}
+          </div>
+          
+          <a href="{{ post.url | relative_url }}" class="read-more">Read More &raquo;</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="no-posts">No posts found. Start writing in your Netlify CMS!</p>
+  {% endif %}
 </div>
 
-<div class="hero-right">
-
-{% assign featured = site.posts.first %}
-
-{% if featured.image %}
-
-<a href="{{ featured.url | relative_url }}">
-
-<img src="{{ featured.image | relative_url }}" alt="{{ featured.title }}">
-
-</a>
-
-{% endif %}
-
-<div class="featured-card">
-
-<span class="badge">FEATURED</span>
-
-<h2>
-
-<a href="{{ featured.url | relative_url }}">
-
-{{ featured.title }}
-
-</a>
-
-</h2>
-
-<p>
-
-{{ featured.excerpt | strip_html | truncatewords:25 }}
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= BREAKING NEWS ================= -->
-
-<section class="ticker">
-
-<div class="ticker-title">
-
-LIVE
-
-</div>
-
-<div class="ticker-content">
-
-<marquee scrollamount="5">
-
-{% for post in site.posts limit:10 %}
-
-📰
-
-<a href="{{ post.url | relative_url }}">
-
-{{ post.title }}
-
-</a>
-
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-{% endfor %}
-
-</marquee>
-
-</div>
-
-</section>
-
-<!-- ================= EDITOR PICKS ================= -->
-
-<section class="editor-section">
-
-<h2 class="section-title">
-
-⭐ Editor's Picks
-
-</h2>
-
-<div class="editor-grid">
-
-{% for post in site.posts limit:3 %}
-
-<div class="editor-card">
-
-{% if post.image %}
-
-<a href="{{ post.url | relative_url }}">
-
-<img src="{{ post.image | relative_url }}">
-
-</a>
-
-{% endif %}
-
-<div class="editor-content">
-
-<h3>
-
-<a href="{{ post.url | relative_url }}">
-
-{{ post.title }}
-
-</a>
-
-</h3>
-
-<p>
-
-{{ post.excerpt | strip_html | truncatewords:18 }}
-
-</p>
-
-<a href="{{ post.url | relative_url }}" class="read-btn">
-
-Read More →
-
-</a>
-
-</div>
-
-</div>
-
-{% endfor %}
-
-</div>
-
-</section>
-
-<!-- ================= LATEST ================= -->
-
-<section id="latest">
-
-<h2 class="section-title">
-
-📰 Latest Tales
-
-</h2>
-
-<div class="post-grid">
-
-{% for post in site.posts offset:3 %}
-
-<div class="post-card">
-
-{% if post.image %}
-
-<a href="{{ post.url | relative_url }}">
-
-<img src="{{ post.image | relative_url }}">
-
-</a>
-
-{% endif %}
-
-<div class="post-content">
-
-<span class="date">
-
-📅 {{ post.date | date:"%d %b %Y" }}
-
-</span>
-
-<h3>
-
-<a href="{{ post.url | relative_url }}">
-
-{{ post.title }}
-
-</a>
-
-</h3>
-
-<p>
-
-{{ post.excerpt | strip_html | truncatewords:22 }}
-
-</p>
-
-<a href="{{ post.url | relative_url }}" class="read-btn">
-
-Continue Reading →
-
-</a>
-
-</div>
-
-</div>
-
-{% endfor %}
-
-</div>
-
-</section>
+<!-- Basic CSS for the layout -->
+<style>
+  .home-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .home-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .post-list {
+    list-style: none;
+    padding: 0;
+  }
+  .post-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  .post-meta {
+    font-size: 0.85em;
+    color: #666;
+  }
+  .post-title {
+    margin: 5px 0 10px;
+  }
+  .post-link {
+    text-decoration: none;
+    color: #e50914; /* Janz Red */
+  }
+  .post-link:hover {
+    text-decoration: underline;
+  }
+  .read-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+</style>
