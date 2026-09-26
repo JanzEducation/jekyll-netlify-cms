@@ -1,0 +1,1 @@
+export default function Cookies(){return <main className="main container"><article className="card"><h1>कुकी नीति</h1><p>कुकी का उपयोग आवश्यक वेबसाइट सुविधाओं, सुरक्षा, पसंद तथा जहां सक्षम हो वहां एनालिटिक्स/विज्ञापन मापन के लिए किया जा सकता है। ब्राउज़र सेटिंग से इन्हें नियंत्रित किया जा सकता है।</p></article></main>}
