@@ -1,0 +1,18 @@
+generator client { provider = "prisma-client-js" }
+datasource db { provider = "postgresql" url = env("DATABASE_URL") }
+enum Role { ADMIN EDITOR AUTHOR }
+enum ArticleStatus { DRAFT REVIEW SCHEDULED PUBLISHED }
+model User { id String @id @default(cuid()) email String @unique passwordHash String role Role @default(AUTHOR) language String @default("hi") createdAt DateTime @default(now()) author Author? }
+model Author { id String @id @default(cuid()) userId String? @unique name String bio String? image String? articles Article[] user User? @relation(fields:[userId],references:[id]) }
+model Category { id String @id @default(cuid()) name String @unique slug String @unique description String? order Int @default(0) articles Article[] createdAt DateTime @default(now()) }
+model Tag { id String @id @default(cuid()) name String @unique slug String @unique articles ArticleTag[] }
+model Article { id String @id @default(cuid()) title String seoTitle String? metaDescription String? slug String @unique excerpt String? content String featuredImage String? imageAlt String? status ArticleStatus @default(DRAFT) language String @default("hi") authorId String categoryId String publishedAt DateTime? updatedAt DateTime @updatedAt scheduledAt DateTime? readingTime Int @default(1) views Int @default(0) factChecked Boolean @default(false) reviewRequired Boolean @default(false) author Author @relation(fields:[authorId],references:[id]) category Category @relation(fields:[categoryId],references:[id]) tags ArticleTag[] sources ArticleSource[] revisions ArticleRevision[] @@index([status,publishedAt]) @@index([categoryId]) }
+model ArticleTag { articleId String tagId String article Article @relation(fields:[articleId],references:[id],onDelete:Cascade) tag Tag @relation(fields:[tagId],references:[id],onDelete:Cascade) @@id([articleId,tagId]) }
+model Media { id String @id @default(cuid()) url String alt String? mime String? createdAt DateTime @default(now()) }
+model Comment { id String @id @default(cuid()) articleId String name String email String? body String approved Boolean @default(false) createdAt DateTime @default(now()) article Article @relation(fields:[articleId],references:[id],onDelete:Cascade) }
+model Redirect { id String @id @default(cuid()) from String @unique to String status Int @default(301) }
+model SiteSetting { id String @id @default(cuid()) key String @unique value String }
+model AdSlot { id String @id @default(cuid()) key String @unique enabled Boolean @default(false) code String? }
+model Analytics { id String @id @default(cuid()) articleId String? date DateTime @default(now()) views Int @default(0) searches Int @default(0) }
+model ArticleRevision { id String @id @default(cuid()) articleId String title String content String metadata Json? createdAt DateTime @default(now()) article Article @relation(fields:[articleId],references:[id],onDelete:Cascade) }
+model ArticleSource { id String @id @default(cuid()) articleId String title String url String publisher String? publicationDate DateTime? accessedAt DateTime @default(now()) article Article @relation(fields:[articleId],references:[id],onDelete:Cascade) }
