@@ -1,0 +1,1 @@
+export default function Disclaimer(){return <main className="main container"><article className="card"><h1>डिस्क्लेमर</h1><p>JANZ TALES की सामग्री सामान्य सूचना के उद्देश्य से है। सरकारी भर्ती, परीक्षा, वित्तीय, स्वास्थ्य और समाचार संबंधी जानकारी के अंतिम निर्णय के लिए संबंधित आधिकारिक स्रोत देखें।</p></article></main>}
